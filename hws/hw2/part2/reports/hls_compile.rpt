@@ -1,0 +1,188 @@
+
+
+================================================================
+== Synthesis Summary Report of 'sort'
+================================================================
++ General Information: 
+    * Date:           Tue Mar 17 09:16:41 2026
+    * Version:        2024.1 (Build 5069499 on May 21 2024)
+    * Project:        sort
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu13p-fsga2577-2-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------+------+-------+---------+---------+----------+---------+------+----------+------+----+-----------+------------+-----+
+    |  Modules | Issue|       | Latency | Latency | Iteration|         | Trip |          |      |    |           |            |     |
+    |  & Loops | Type | Slack | (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |     LUT    | URAM|
+    +----------+------+-------+---------+---------+----------+---------+------+----------+------+----+-----------+------------+-----+
+    |+ sort    |     -|  16.21|       17|  425.000|         -|       18|     -|        no|     -|   -|  423 (~0%)|  1441 (~0%)|    -|
+    | o Outer  |     -|  18.25|       15|  375.000|         1|        1|    16|       yes|     -|   -|          -|           -|    -|
+    +----------+------+-------+---------+---------+----------+---------+------+----------+------+----+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* Other Ports
++---------+---------+-----------+----------+
+| Port    | Mode    | Direction | Bitwidth |
++---------+---------+-----------+----------+
+| in_0_i  | ap_ovld | in        | 32       |
+| in_0_o  | ap_ovld | out       | 32       |
+| in_10_i | ap_ovld | in        | 32       |
+| in_10_o | ap_ovld | out       | 32       |
+| in_11_i | ap_ovld | in        | 32       |
+| in_11_o | ap_ovld | out       | 32       |
+| in_12_i | ap_ovld | in        | 32       |
+| in_12_o | ap_ovld | out       | 32       |
+| in_13_i | ap_ovld | in        | 32       |
+| in_13_o | ap_ovld | out       | 32       |
+| in_14_i | ap_ovld | in        | 32       |
+| in_14_o | ap_ovld | out       | 32       |
+| in_15_i | ap_ovld | in        | 32       |
+| in_15_o | ap_ovld | out       | 32       |
+| in_1_i  | ap_ovld | in        | 32       |
+| in_1_o  | ap_ovld | out       | 32       |
+| in_2_i  | ap_ovld | in        | 32       |
+| in_2_o  | ap_ovld | out       | 32       |
+| in_3_i  | ap_ovld | in        | 32       |
+| in_3_o  | ap_ovld | out       | 32       |
+| in_4_i  | ap_ovld | in        | 32       |
+| in_4_o  | ap_ovld | out       | 32       |
+| in_5_i  | ap_ovld | in        | 32       |
+| in_5_o  | ap_ovld | out       | 32       |
+| in_6_i  | ap_ovld | in        | 32       |
+| in_6_o  | ap_ovld | out       | 32       |
+| in_7_i  | ap_ovld | in        | 32       |
+| in_7_o  | ap_ovld | out       | 32       |
+| in_8_i  | ap_ovld | in        | 32       |
+| in_8_o  | ap_ovld | out       | 32       |
+| in_9_i  | ap_ovld | in        | 32       |
+| in_9_o  | ap_ovld | out       | 32       |
++---------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| in       | inout     | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+----------------+---------+
+| Argument | HW Interface   | HW Type |
++----------+----------------+---------+
+| in       | in_0_i         | port    |
+| in       | in_0_o         | port    |
+| in       | in_0_o_ap_vld  | port    |
+| in       | in_1_i         | port    |
+| in       | in_1_o         | port    |
+| in       | in_1_o_ap_vld  | port    |
+| in       | in_2_i         | port    |
+| in       | in_2_o         | port    |
+| in       | in_2_o_ap_vld  | port    |
+| in       | in_3_i         | port    |
+| in       | in_3_o         | port    |
+| in       | in_3_o_ap_vld  | port    |
+| in       | in_4_i         | port    |
+| in       | in_4_o         | port    |
+| in       | in_4_o_ap_vld  | port    |
+| in       | in_5_i         | port    |
+| in       | in_5_o         | port    |
+| in       | in_5_o_ap_vld  | port    |
+| in       | in_6_i         | port    |
+| in       | in_6_o         | port    |
+| in       | in_6_o_ap_vld  | port    |
+| in       | in_7_i         | port    |
+| in       | in_7_o         | port    |
+| in       | in_7_o_ap_vld  | port    |
+| in       | in_8_i         | port    |
+| in       | in_8_o         | port    |
+| in       | in_8_o_ap_vld  | port    |
+| in       | in_9_i         | port    |
+| in       | in_9_o         | port    |
+| in       | in_9_o_ap_vld  | port    |
+| in       | in_10_i        | port    |
+| in       | in_10_o        | port    |
+| in       | in_10_o_ap_vld | port    |
+| in       | in_11_i        | port    |
+| in       | in_11_o        | port    |
+| in       | in_11_o_ap_vld | port    |
+| in       | in_12_i        | port    |
+| in       | in_12_o        | port    |
+| in       | in_12_o_ap_vld | port    |
+| in       | in_13_i        | port    |
+| in       | in_13_o        | port    |
+| in       | in_13_o_ap_vld | port    |
+| in       | in_14_i        | port    |
+| in       | in_14_o        | port    |
+| in       | in_14_o_ap_vld | port    |
+| in       | in_15_i        | port    |
+| in       | in_15_o        | port    |
+| in       | in_15_o_ap_vld | port    |
++----------+----------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------+-----+--------+-------------+-------+--------+---------+
+| Name                     | DSP | Pragma | Variable    | Op    | Impl   | Latency |
++--------------------------+-----+--------+-------------+-------+--------+---------+
+| + sort                   | 0   |        |             |       |        |         |
+|   i_fu_909_p2            |     |        | i           | add   | fabric | 0       |
+|   icmp_ln10_fu_915_p2    |     |        | icmp_ln10   | setgt | auto   | 0       |
+|   icmp_ln10_1_fu_921_p2  |     |        | icmp_ln10_1 | setgt | auto   | 0       |
+|   icmp_ln10_2_fu_927_p2  |     |        | icmp_ln10_2 | setgt | auto   | 0       |
+|   icmp_ln10_3_fu_933_p2  |     |        | icmp_ln10_3 | setgt | auto   | 0       |
+|   icmp_ln10_4_fu_939_p2  |     |        | icmp_ln10_4 | setgt | auto   | 0       |
+|   icmp_ln10_5_fu_945_p2  |     |        | icmp_ln10_5 | setgt | auto   | 0       |
+|   icmp_ln10_6_fu_951_p2  |     |        | icmp_ln10_6 | setgt | auto   | 0       |
+|   icmp_ln10_7_fu_962_p2  |     |        | icmp_ln10_7 | setgt | auto   | 0       |
+|   icmp_ln19_fu_973_p2    |     |        | icmp_ln19   | setgt | auto   | 0       |
+|   icmp_ln19_1_fu_979_p2  |     |        | icmp_ln19_1 | setgt | auto   | 0       |
+|   icmp_ln19_2_fu_985_p2  |     |        | icmp_ln19_2 | setgt | auto   | 0       |
+|   icmp_ln19_3_fu_991_p2  |     |        | icmp_ln19_3 | setgt | auto   | 0       |
+|   icmp_ln19_4_fu_997_p2  |     |        | icmp_ln19_4 | setgt | auto   | 0       |
+|   icmp_ln19_5_fu_1003_p2 |     |        | icmp_ln19_5 | setgt | auto   | 0       |
+|   icmp_ln19_6_fu_1009_p2 |     |        | icmp_ln19_6 | setgt | auto   | 0       |
+|   icmp_ln5_fu_1025_p2    |     |        | icmp_ln5    | seteq | auto   | 0       |
++--------------------------+-----+--------+-------------+-------+--------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+----------------------+-----------------------------------+
+| Type            | Options              | Location                          |
++-----------------+----------------------+-----------------------------------+
+| array_partition | variable=in complete | ../src/hw2_sort.cpp:4 in sort, in |
+| pipeline        | II=1                 | ../src/hw2_sort.cpp:6 in sort     |
+| unroll          |                      | ../src/hw2_sort.cpp:9 in sort     |
+| unroll          |                      | ../src/hw2_sort.cpp:18 in sort    |
++-----------------+----------------------+-----------------------------------+
+
+
