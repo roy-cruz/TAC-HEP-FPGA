@@ -1,5 +1,5 @@
 #include <iostream>
-#define N 10
+#define N 100
 
 void matrix_mult(int A[N][N], int B[N][N], int C[N][N]);
 
@@ -14,6 +14,7 @@ int main() {
         for (int j = 0; j < N; j++) {
             A[i][j] = i + j;
             B[i][j] = i - j;
+            C[i][j] = 0;
         }
     }
 
@@ -24,15 +25,15 @@ int main() {
     int errors = 0;
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-		int temp = 0;
-		for (size_t k=0; k<N; k++) {
-			temp += A[i][k] * B[k][j];
-		}
-		if (temp != C[i][j]) {
-			errors++;		
-		}	
+            int temp = 0;
+            for (size_t k = 0; k < N; k++) {
+                temp += A[i][k] * B[k][j];
             }
+            if (temp != C[i][j]) {
+                errors++;		
+            }	
         }
+    }
 
     if (errors == 0)
         std::cout << "TEST PASSED\n";

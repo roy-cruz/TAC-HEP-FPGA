@@ -1,5 +1,5 @@
 #include <iostream>
-#define N 10
+#define N 100
 
 void matrix_add(int A[N][N], int B[N][N], int C[N][N]);
 
@@ -14,6 +14,7 @@ int main() {
         for (int j = 0; j < N; j++) {
             A[i][j] = i + j;
             B[i][j] = i - j;
+            C[i][j] = 0;
         }
     }
 

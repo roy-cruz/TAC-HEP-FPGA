@@ -1,25 +1,25 @@
 # Homework 1
 
-## Resource utilization
-Results
-| Algorithm | URAM | LUT | FF | DSP48E | BRAM_18K |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **Vector add** | 0 | 114 | 20 | 0 | 0 |
-| **Matrix add** | 0 | 156 | 35 | 0 | 0 |
-| **Matrix mult** | 0 | 274 | 79 | 3 | 0 |
+## Instructions
 
-Normalized to vector add where applicable
+Q1. Develop C/C++ programs to implement the following operations:
 
-| Algorithm | URAM | LUT | FF | DSP48E | BRAM_18K |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **Vector add** | - | 1.00 | 1.00 | - | - |
-| **Matrix add** | - | 1.37 | 1.75 | - | - |
-| **Matrix mult** | - | 2.40 | 3.95 | - | - |
+  a. Vector addition 
+  b. Vector multiplication
+  c. Matrix addition 
+  d. Matrix multiplication
 
-## Latency
+You may use the templates provided in the lecture04 directory as a starting point. Use Vitis/Vivado HLS to perform `C Simulation (C-Sim)` and `C Synthesis (C-Synth)`. Use at least 10 elements for each of above case. 
 
-| Algorithm | Cycles | Cycles (Norm) |
-| :--- | :---: | :---: |
-| **Vector add** | 102 | 1 |
-| **Matrix add** | 221 | 2.17 |
-| **Matrix mult** | 2221 | 21.77 |
+For each of the four implementations:
+- Finally, compare the results across all four categories and discuss your observations.
+
+## Solution
+
+Part: `xcvu13p-fsga2577-2-e`
+Clock: `25 ns`
+
+### Latency
+
+### Resources
+
