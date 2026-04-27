@@ -22,7 +22,7 @@ Clock: `25 ns`
 
 The following are the performance and resource estimates reports provided by Vitis for each of the implementations:
 
-#### Matrix addition
+**Matrix addition**
 
 ```
 +----------------------------------+------+-------+---------+-----------+----------+---------+-------+----------+------+---------+----------+-----------+-----+
@@ -34,7 +34,7 @@ The following are the performance and resource estimates reports provided by Vit
 +----------------------------------+------+-------+---------+-----------+----------+---------+-------+----------+------+---------+----------+-----------+-----+
 ```
 
-#### Matrix multiplication
+**Matrix multiplication**
 
 ```
 +-------------------------------------------------+------+-------+---------+-----------+----------+---------+---------+----------+------+---------+-----------+-----------+-----+
@@ -46,7 +46,7 @@ The following are the performance and resource estimates reports provided by Vit
 +-------------------------------------------------+------+-------+---------+-----------+----------+---------+---------+----------+------+---------+-----------+-----------+-----+
 ```
 
-#### Vector addition
+**Vector addition**
 
 ```
 +-------------------+------+-------+---------+-----------+----------+---------+------+----------+------+----+----------+-----------+-----+
@@ -58,7 +58,7 @@ The following are the performance and resource estimates reports provided by Vit
 +-------------------+------+-------+---------+-----------+----------+---------+------+----------+------+----+----------+-----------+-----+
 ```
 
-#### Vector multiplication
+**Vector multiplication**
 
 ```
 +-------------------+------+-------+---------+-----------+----------+---------+------+----------+------+---------+----------+-----------+-----+
@@ -69,3 +69,17 @@ The following are the performance and resource estimates reports provided by Vit
 | o VITIS_LOOP_5_1  |     -|  18.25|      100|  2.500e+03|         2|        1|   100|       yes|     -|        -|         -|          -|    -|
 +-------------------+------+-------+---------+-----------+----------+---------+------+----------+------+---------+----------+-----------+-----+
 ```
+
+**Discussion**
+
+For all implementations, $N = 100$, meaning vectors contained 100 elements and matrices contained 10,000 elements ($100 \times 100$). These results demonstrate that the latency scaled directly with the complexity of each operation:
+
+* Vector operations (addition/multiplication) are linear, $O(N)$, and took ~100 cycles.
+
+* Matrix addition is quadratic, $O(N^2)$, and took ~10,000 cycles.
+
+* Matrix multiplication is cubic, $O(N^3)$, and took ~1,000,000 cycles.
+
+This confirms that the Vitis HLS compiler successfully flattened the nested loops and achieved an Initiation Interval (II) of 1. This means that the hardware pipeline accepts a new input every clock cycle. Moreover, the slack across all implementations is high (> 11 ns), indicating that all implementations meet the 25 ns timing constraint by a wide margin.
+
+Regarding resource utilization, the addition operations use 0 to 1 DSPs, while the multiplication requires 3 to 4. This highlights that addition is often implemented using basic Look-Up Table (LUT) logic, while multiplication is more computationally expensive and uses dedicated DSPs. In all cases, resource utilization remains a negligible fraction of the `xcvu13p` capacity, which suggests that additional resources could be used for further parallelization if higher performance were required.
